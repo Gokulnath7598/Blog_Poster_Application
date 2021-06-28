@@ -1,0 +1,20 @@
+{% extends "post/base1.html" %}
+
+{% block content %}
+
+<div class="container" style="align-items: center;text-align: center;opacity: .9;">
+    <div class="card text-white bg-dark mb-4 mt-4" style="margin-left: 20%;margin-right: 20%;">
+        <div class="card-header">
+            Login To Your Account
+        </div>
+        <div class="card--body mt-4">
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-success">Login</button>
+            </form>
+            <a href="{% url 'register' %}"><button class="btn btn-info mt-4 mb-4">Create Account</button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

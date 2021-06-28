@@ -1,0 +1,23 @@
+{% extends "post/base.html" %}
+
+{% block content %}
+<div class="col-md-8">
+    <div class="card mb-4 mt-4">
+        <div class="card-header" style="text-align: center;">
+            Create Blog Post
+        </div>
+        <div class="card--body mt-4" style="text-align:center;">
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <div style="text-align: center;">
+                    <button type="submit" class="btn btn-success mb-4">Post</button>
+                </div>
+            </form>
+            <div style="text-align: center;">
+                <a href="{% url 'home' %}"><button type="submit" class="btn btn-danger mb-4">Discard Post</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
